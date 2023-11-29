@@ -29,4 +29,4 @@ jobs:
       run: |
         echo "${{ secrets.SSH_PRIVATE_KEY }}" > ssh_key.pem
         chmod 600 ssh_key.pem
-        sshpass -p ${{ secrets.SSH_KEY_PW }} scp -i ssh_key.pem -o StrictHostKeyChecking=no -r dist/* ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/var/www/html/deploytest/
+        scp -i ssh_key.pem -o StrictHostKeyChecking=no -r dist/* ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/var/www/html/deploytest/
